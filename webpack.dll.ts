@@ -46,7 +46,6 @@ function webpackConfig(options: EnvOptions = {}): WebpackConfig {
       sourceMapFilename: '[name].[hash].map',
       library: "__[name]"
     },
-
     module: {
       loaders: [
         // fix angular2
