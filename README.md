@@ -5,17 +5,16 @@ forked from https://github.com/AngularClass/angular-seed
 added functionality and fixed the build system
 
 ```bash
-# clone our repo
-# --depth 1 removes all but one .git commit history
+# clone the repo
 git clone https://github.com/klaaz0r/angular-seed.git
 
-# change directory to our repo
+# move to the repo
 cd angular-seed
 
 # install the repo with npm
 npm install
 
-# start the server
+# start the magic
 npm start
 ```
 

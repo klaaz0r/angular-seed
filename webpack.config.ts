@@ -25,8 +25,8 @@ function root(__path = '.') {
 }
 
 // type definition for WebpackConfig is defined in webpack.d.ts
-function webpackConfig(options: EnvOptions = {}) {
-    console.log('options', options)
+function webpackConfig(options: EnvOptions = {}): WebpackConfig {
+
     const CONSTANTS = {
         ENV: JSON.stringify(options.ENV),
         HMR: Boolean(options.HMR),
@@ -60,7 +60,7 @@ function webpackConfig(options: EnvOptions = {}) {
         },
 
         //lol we are doing angular .. we no performance is bad :x
-        performance: { hints: false },
+        performance: { hints: false } ,
 
         module: {
             // allowSyntheticDefaultImports for System.import
