@@ -35,7 +35,7 @@ export class About {
 
   onSubmit(value, form) {
     if (form.valid) {
-      console.log('form value3', value);
+      console.log('form value', value);
 
       let newState = Object.assign({}, value);
       this.appStore.setState(newState);

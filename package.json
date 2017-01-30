@@ -10,8 +10,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run server:dev",
-    "start:hmr": "npm run server:dev -- --env.HMR",
+    "start": "npm run server:dev -- --env.HMR",
     "server:dev": "webpack-dev-server --env.ENV development",
     "debug:start": "node-nightly --inspect --debug-brk node_modules/webpack-dev-server/bin/webpack-dev-server.js --env.ENV development",
     "debug:build": "node-nightly --inspect --debug-brk node_modules/webpack/bin/webpack.js --env.ENV development",

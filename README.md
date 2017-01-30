@@ -1,4 +1,8 @@
 # Angular Seed
+
+forked from https://github.com/AngularClass/angular-seed
+
+added some functionality and fixed the build
 > A simple Angular Seed featuring Angular 2 (or Angular 4) and Webpack 2 with async routes.
 
 
@@ -15,9 +19,6 @@ npm install
 
 # start the server
 npm start
-
-# use Hot Module Replacement
-npm run server:dev:hmr
 
 # if you're in China use cnpm
 # https://github.com/cnpm/cnpm
