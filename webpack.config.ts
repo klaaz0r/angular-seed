@@ -25,7 +25,7 @@ function root(__path = '.') {
 }
 
 // type definition for WebpackConfig is defined in webpack.d.ts
-function webpackConfig(options: EnvOptions = {}): WebpackConfig {
+function webpackConfig(options) {
 
     const CONSTANTS = {
         ENV: JSON.stringify(options.ENV),
@@ -35,7 +35,7 @@ function webpackConfig(options: EnvOptions = {}): WebpackConfig {
         HTTPS: false
     }
 
-    console.log('CONSTANTS', JSON.stringify(CONSTANTS, null, 2));
+    // console.log('CONSTANTS', JSON.stringify(CONSTANTS, null, 2));
     const isProd = options.ENV.indexOf('prod') !== -1;
 
     const DLL = require(root('./src/dll'));
@@ -60,7 +60,7 @@ function webpackConfig(options: EnvOptions = {}): WebpackConfig {
         },
 
         //lol we are doing angular .. we no performance is bad :x
-        performance: { hints: false } ,
+        performance: { hints: false },
 
         module: {
             // allowSyntheticDefaultImports for System.import
