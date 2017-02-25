@@ -1,6 +1,3 @@
-/**
- * @author: @AngularClass
- */
 const {
     ContextReplacementPlugin,
     HotModuleReplacementPlugin,
@@ -30,7 +27,7 @@ function webpackConfig(options) {
     const CONSTANTS = {
         ENV: JSON.stringify(options.ENV),
         HMR: Boolean(options.HMR),
-        PORT: 3000,
+        PORT: 3003,
         HOST: 'localhost',
         HTTPS: false
     }

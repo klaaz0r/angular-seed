@@ -1,23 +1,20 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Home, Yolo } from './home';
+import { Home } from './home';
 
 
 export const ROUTER_CONFIG = [
-  { path: '', component: Home, pathMatch: 'full' },
-  { path: 'yolo', component: Yolo },
+    { path: '', component: Home, pathMatch: 'full' }
 ];
 
 @NgModule({
-  declarations: [
-    // Components / Directives/ Pipes
-    Yolo,
-    Home
-  ],
-  imports: [
-    RouterModule.forChild(ROUTER_CONFIG)
-  ],
+    declarations: [
+        Home
+    ],
+    imports: [
+        RouterModule.forChild(ROUTER_CONFIG)
+    ],
 })
+
 export default class HomeModule {
 }
-

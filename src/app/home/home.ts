@@ -1,22 +1,13 @@
 import { Component } from '@angular/core';
-
-
-@Component({})
-export class Home {
-  constructor() {
-    console.log('Home');
-  }
-}
+import * as R from 'ramda';
+import { log } from '../../logger';
+const { map } = R;
 
 @Component({
-  template: `
-    <div>
-      YOLO
-    </div>
-  `
+
 })
-export class Yolo {
-  constructor() {
-    console.log('Yolo');
-  }
+export class Home {
+    constructor() {
+        log('info','hello world')
+    }
 }

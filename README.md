@@ -12,8 +12,7 @@ git clone https://github.com/klaaz0r/angular-seed.git
 cd angular-seed
 
 # install the repo with npm
-npm install
-
+npm install && npm run dll
 # start the magic
 npm start
 ```
@@ -29,8 +28,5 @@ npm start
   * Async loading
 * Angular 2
   * Update package.json to current beta version https://github.com/angular/angular/tree/4.0.0-beta.0
-* AngularClass
-  * @angularclass/form-validator
-  * @angularclass/conventions-loader
-  * @angularclass/hmr-loader
-  * @angularclass/hmr
+* logger
+  * browser-bunyan logger

@@ -9,6 +9,7 @@ import { removeNgStyles, createNewHosts, createInputTransfer, bootloader } from 
 import { App } from './app/app';
 import { AppStore } from './app/app-store';
 import appModule from './app';
+import { log } from './logger';
 
 @NgModule({
     bootstrap: [
@@ -36,12 +37,17 @@ import appModule from './app';
 class MainModule {
     constructor(public appRef: ApplicationRef, public appStore: AppStore) { }
     hmrOnInit(store) {
-        if (!store || !store.state) { return; }
-        console.log('HMR store', JSON.stringify(store, null, 2));
+        if (!store || !store.state) {
+            return;
+        }
+
+        log('debug', JSON.stringify(store, null, 2))
         // restore state
         this.appStore.setState(store.state);
         // restore input values
-        if ('restoreInputValues' in store) { store.restoreInputValues(); }
+        if ('restoreInputValues' in store) {
+            store.restoreInputValues();
+        }
         this.appRef.tick();
         Object.keys(store).forEach(prop => delete store[prop]);
     }

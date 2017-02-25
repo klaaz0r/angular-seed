@@ -4,20 +4,18 @@ import { NgModule } from '@angular/core';
 import HomeModule from './home';
 
 export const ROUTER_CONFIG = [
-  { path: '', loadChildren: () => HomeModule },
-  { path: 'about', loadChildren: () => System.import('./+about') },
+    { path: '', loadChildren: () => HomeModule }
 ];
 
 @NgModule({
-  providers: [
-  ],
-  declarations: [
-    // Components / Directives/ Pipes
-  ],
-  imports: [
-    RouterModule.forChild(ROUTER_CONFIG),
-  ],
+    providers: [
+    ],
+    declarations: [
+    ],
+    imports: [
+        RouterModule.forChild(ROUTER_CONFIG),
+    ],
 })
 export default class AppModule {
-  static routes = ROUTER_CONFIG;
+    static routes = ROUTER_CONFIG;
 }

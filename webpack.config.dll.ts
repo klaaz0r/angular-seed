@@ -1,11 +1,7 @@
 import 'core-js/es6';
 import 'core-js/es7/reflect';
 import 'ts-helpers';
-// needed to create context for resolveNgRoute
 
-/**
- * @author: @AngularClass
- */
 const {
     ContextReplacementPlugin,
     HotModuleReplacementPlugin,

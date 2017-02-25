@@ -1,12 +1,3 @@
-/*
- * README
- * any changes to this file and you have to run `npm run dll` to generate the bundle
- *
- * Polyfills
- * Vendors
- * RxJS
- */
-
 // Polyfills
 export function polyfills(env?: any) {
     return [
@@ -51,9 +42,8 @@ export function vendors(env?: any) {
         '@angular/common',
         '@angular/core',
         '@angular/http',
-
         '@angularclass/form-validators',
-        '@angularclass/hmr',
+        '@angularclass/hmr'
     ];
 }
 
