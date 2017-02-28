@@ -21,7 +21,6 @@ function root(__path = '.') {
     return path.join(__dirname, __path);
 }
 
-// type definition for WebpackConfig is defined in webpack.d.ts
 function webpackConfig(options) {
 
     const CONSTANTS = {
@@ -32,7 +31,6 @@ function webpackConfig(options) {
         HTTPS: false
     }
 
-    // console.log('CONSTANTS', JSON.stringify(CONSTANTS, null, 2));
     const isProd = options.ENV.indexOf('prod') !== -1;
 
     const DLL = require(root('./src/dll'));
@@ -41,10 +39,7 @@ function webpackConfig(options) {
 
     return {
         cache: true,
-        // devtool: 'hidden-source-map',
         devtool: 'source-map',
-        // devtool: 'cheap-module-eval-source-map',
-
         entry: {
             main: [].concat(polyfills, './src/main.browser', rxjs)
         },
@@ -60,7 +55,6 @@ function webpackConfig(options) {
         performance: { hints: false },
 
         module: {
-            // allowSyntheticDefaultImports for System.import
             loaders: [
                 {
                     test: /\.ts$/,
@@ -173,18 +167,15 @@ module.exports = webpackConfig;
 function getManifest(__path) {
     var __fs = fs || require('fs');
     var manifest = tryDll(() => JSON.parse(__fs.readFileSync(root('./dist/dll/' + __path + '-manifest.json'), 'utf8')
-        // TODO(gdi2290): workaround until webpack fixes dll generation
         .replace(/}(.*[\n\r]\s*)}(.*[\n\r]\s*)}"activeExports": \[\]/, '')));
     return manifest;
 }
 function getDllAssets(chunk) {
     var assets = tryDll(() => require(root('./dist/dll/webpack-assets.json')));
-    // {"vendors":{"js":"vendors.js"},"polyfills":{"js":"polyfills.js"}}
     return assets[chunk]['js'];
 }
 function getAssets(chunk) {
     var assets = tryDll(() => require(root('./dist/webpack-assets.json')));
-    // {"vendors":{"js":"vendors.js"},"polyfills":{"js":"polyfills.js"}}
     return assets[chunk]['js'];
 }
 function tryDll(cb) {
@@ -195,6 +186,5 @@ function tryDll(cb) {
         var spawn: any = require('cross-spawn');
         spawn.sync("npm", ["run", "dll"], { stdio: "inherit" });
         return cb();
-        // throw new Error('Please run `npm run dll` first before building or running the server');
     }
 }

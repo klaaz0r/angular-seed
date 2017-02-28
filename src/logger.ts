@@ -2,7 +2,6 @@ import * as bunyan from 'browser-bunyan'
 
 const logger = bunyan.createLogger({
     name: 'ActorTempalteApp',
-    src: true,
     streams: [
         {
             level: 'trace',
@@ -13,5 +12,5 @@ const logger = bunyan.createLogger({
 });
 
 export function log(level: string, ...message: string[]): void {
-    logger[level](...message)
+    return logger[level](...message)
 }

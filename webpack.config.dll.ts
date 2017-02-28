@@ -27,7 +27,6 @@ function root(__path = '.') {
 
 import { polyfills, vendors } from './src/dll';
 
-// type definition for WebpackConfig is defined in webpack.d.ts
 function webpackConfig(options) {
     return {
         devtool: '#source-map',
@@ -108,18 +107,11 @@ function webpackConfig(options) {
 
             // fix angular2
             new ContextReplacementPlugin(
-                // The (\\|\/) piece accounts for path separators in *nix and Windows
                 /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
                 root('./src'),
                 resolveNgRoute(root('./src'))
             ),
-            // end angular2 fix
-
             new ProgressPlugin({}),
-
-            // https://github.com/webpack/webpack/issues/2764
-            // new DedupePlugin(),
-
         ],
         node: {
             global: true,
@@ -135,6 +127,4 @@ function webpackConfig(options) {
     };
 }
 
-
-// Export
 module.exports = webpackConfig;

@@ -12,27 +12,18 @@ import appModule from './app';
 import { log } from './logger';
 
 @NgModule({
-    bootstrap: [
-        App
-    ],
-    declarations: [
-        App
-    ],
+    bootstrap: [App],
+    declarations: [App],
     imports: [
-        // Angular 2
         BrowserModule,
         FormsModule,
         HttpModule,
         RouterModule.forRoot([], {
             useHash: true
         }),
-        // app
         appModule
-        // vendors
     ],
-    providers: [
-        AppStore
-    ]
+    providers: [AppStore]
 })
 class MainModule {
     constructor(public appRef: ApplicationRef, public appStore: AppStore) { }
